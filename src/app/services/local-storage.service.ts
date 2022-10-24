@@ -6,17 +6,17 @@ import { Shift } from '../domain/shift';
   providedIn: 'root',
 })
 export class LocalStorageService {
-  setItem(array: Shift | Employee, key: string): void {
-    let arrays = [];
+  setItem(item: Shift | Employee, key: string): void {
+    let data = [];
 
     if (localStorage.getItem(key)) {
-      arrays = JSON.parse(localStorage.getItem(key) ?? '');
-      arrays = [array, ...arrays];
+      data = JSON.parse(localStorage.getItem(key) ?? '');
+      data = [item, ...data];
     } else {
-      arrays = [array];
+      data = [item];
     }
 
-    localStorage.setItem(key, JSON.stringify(arrays));
+    localStorage.setItem(key, JSON.stringify(data));
   }
 
   getItem(key: string): [] {
