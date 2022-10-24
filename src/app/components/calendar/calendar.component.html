@@ -1,0 +1,48 @@
+<div class="calendar">
+  <mat-card>
+    <h1>Weekoverzicht</h1>
+
+    <div class="calendar__header">
+      <button routerLink="/employees">Medewerker toevoegen</button>
+      <button routerLink="/shifts">Tijdslot toevoegen</button>
+    </div>
+
+    <table class="calendar__table">
+      <tr>
+        <th>Medewerker</th>
+        <th>Maandag</th>
+        <th>Dinsdag</th>
+        <th>Woensdag</th>
+        <th>Donderdag</th>
+        <th>Vrijdag</th>
+        <th>Zaterdag</th>
+        <th>Zondag</th>
+      </tr>
+
+      <tr *ngFor="let row of calendar">
+        <td>{{ row.employee.name }}</td>
+        <td class="monday filled">
+          <app-calendar-day [calendar]="row" [day]="1"></app-calendar-day>
+        </td>
+        <td class="tuesday filled">
+          <app-calendar-day [calendar]="row" [day]="2"></app-calendar-day>
+        </td>
+        <td class="wednesday filled">
+          <app-calendar-day [calendar]="row" [day]="3"></app-calendar-day>
+        </td>
+        <td class="thursday filled">
+          <app-calendar-day [calendar]="row" [day]="4"></app-calendar-day>
+        </td>
+        <td class="friday filled">
+          <app-calendar-day [calendar]="row" [day]="5"></app-calendar-day>
+        </td>
+        <td class="saturday filled">
+          <app-calendar-day [calendar]="row" [day]="6"></app-calendar-day>
+        </td>
+        <td class="sunday filled">
+          <app-calendar-day [calendar]="row" [day]="0"></app-calendar-day>
+        </td>
+      </tr>
+    </table>
+  </mat-card>
+</div>

@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Tijdslot {{ data.date | date }}</h1>
+<div mat-dialog-content>
+  <div class="content">
+    <div class="content__item">
+      <strong>Medewerker</strong>
+      <span>{{ data.name }}</span>
+    </div>
+
+    <div class="content__item">
+      <strong>Start- en eindtijd</strong>
+      <span>{{ data.startTime }} - {{ data.endTime }}</span>
+    </div>
+  </div>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>

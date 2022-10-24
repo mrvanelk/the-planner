@@ -1,0 +1,22 @@
+<div class="employees">
+  <mat-card>
+    <h1>Werknemers</h1>
+    <input type="text" placeholder="Naam" [(ngModel)]="employee.name" />
+    <button [disabled]="!employee.name" (click)="addEmployee()">Add</button>
+
+    <table mat-table [dataSource]="employees" class="employees__table">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Medewerker</th>
+        <td mat-cell *matCellDef="let employee">{{ employee.name }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="role">
+        <th mat-header-cell *matHeaderCellDef>Rol</th>
+        <td mat-cell *matCellDef="let employee">{{ employee.role }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumn"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumn"></tr>
+    </table>
+  </mat-card>
+</div>

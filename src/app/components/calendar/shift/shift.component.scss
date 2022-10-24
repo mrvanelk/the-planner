@@ -1,0 +1,13 @@
+.shift {
+  background-color: #d3e4ff;
+  border: 3px solid #168fdf;
+  display: grid;
+  padding: 8px;
+  border-radius: 4px;
+  color: #168fdf;
+
+  &:hover {
+    background-color: #b5cff8;
+    cursor: pointer;
+  }
+}

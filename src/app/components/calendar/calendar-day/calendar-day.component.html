@@ -1,0 +1,5 @@
+<div class="calendar-day">
+  <ng-container *ngFor="let shift of calendar.shifts">
+    <app-shift *ngIf="shift.day === day" [shift]="shift"></app-shift>
+  </ng-container>
+</div>

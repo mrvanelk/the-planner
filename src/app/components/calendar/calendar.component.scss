@@ -1,0 +1,23 @@
+.calendar {
+  &__header {
+    float: right;
+  }
+
+  &__table {
+    width: 100%;
+    table-layout: fixed;
+    border-spacing: 8px;
+      text-align: left;
+
+    th,
+    td {
+      vertical-align: top;
+      border-radius: 4px;
+
+      &.filled {
+        height: 60px;
+        background: #eee;
+      }
+    }
+  }
+}
